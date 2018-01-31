@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.kfit</groupId>
+	<artifactId>spring-boot-mybatis</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spring-boot-mybatis</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- spring boot parent节点，引入这个之后，在下面和spring boot相关的就不需要引入版本了; -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.1.RELEASE</version>
+	</parent>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 指定一下jdk的版本 ，这里我们使用jdk 1.8 ,默认是1.6 -->
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- web支持: 1、web mvc; 2、restful; 3、jackjson支持; 4、aop ........ -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- mysql 数据库驱动. -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- spring-boot mybatis依赖： 请不要使用1.0.0版本，因为还不支持拦截器插件， 1.1.1 是博主写帖子时候的版本，大家使用最新版本即可 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+
+		<!-- MyBatis提供了拦截器接口，我们可以实现自己的拦截器， 将其作为一个plugin装入到SqlSessionFactory中。 Github上有位开发者写了一个分页插件，我觉得使用起来还可以，挺方便的。 
+			Github项目地址： https://github.com/pagehelper/Mybatis-PageHelper -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- jsp标签库 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional><!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.12</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/jdom/jdom -->
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/com.io7m.xom/xom -->
+		<dependency>
+			<groupId>com.io7m.xom</groupId>
+			<artifactId>xom</artifactId>
+			<version>1.2.10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.sf.ezmorph/ezmorph -->
+		<dependency>
+			<groupId>net.sf.ezmorph</groupId>
+			<artifactId>ezmorph</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.giffing.easyxml/easyxml-jdom2 -->
+<dependency>
+    <groupId>com.giffing.easyxml</groupId>
+    <artifactId>easyxml-jdom2</artifactId>
+    <version>0.0.4</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/xerces/xercesImpl -->
+<dependency>
+    <groupId>xerces</groupId>
+    <artifactId>xercesImpl</artifactId>
+    <version>2.9.1</version>
+</dependency>
+
+
+
+	</dependencies>
+</project>
